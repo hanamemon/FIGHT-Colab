@@ -28,7 +28,8 @@ def start_driver() -> webdriver.Chrome:
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/95.0.4638.54 Safari/537.36"
     )
-
+    options.binary_location = "/usr/bin/chromium-browser" ## testing if this works
+    
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     # s = Service("/bin/chromedriver")
