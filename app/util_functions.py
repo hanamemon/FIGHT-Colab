@@ -191,7 +191,7 @@ def page_1(driver: webdriver.Chrome, fake_identity: dict, url:str) -> None:
         
         
         print("attaching the resume")
-        resume_input = driver.find_element("data-automation-id", "btn-forceResume")
+        resume_input = driver.find_element(By.CSS_SELECTOR, "[data-automation-id='btn-forceResume']")
         resume_input.send_keys(os.path.join(os.getcwd(), f"{fake_identity['first_name']} {fake_identity['last_name']}.pdf"))
         driver.implicitly_wait(5)
         
@@ -442,7 +442,7 @@ def fill_form_app1(driver: webdriver.Chrome, fake_identity: dict) -> None:
         #forceUploadResumeModal > div > div > div.modal-footer > div > button
         
         print("attaching the resume")
-        resume_input = driver.find_element("data-automation-id", "btn-forceResume")
+        driver.find_element(By.CSS_SELECTOR, "[data-automation-id='btn-forceResume']")
         resume_input.send_keys(os.path.join(os.getcwd(), f"{fake_identity['first_name']} {fake_identity['last_name']}.pdf"))
         driver.implicitly_wait(5)
         
@@ -640,7 +640,7 @@ def fill_form_app2(driver: webdriver.Chrome, fake_identity: dict) -> None:
         
         
         print("attaching the resume")
-        resume_input = driver.find_element(By.XPATH, "/html/body/div[2]/div/div/div/div/div[3]/div/button")
+        resume_input = driver.find_element(By.CSS_SELECTOR, "[data-automation-id='btn-forceResume']")
         resume_input.send_keys(os.path.join(os.getcwd(), f"{fake_identity['first_name']} {fake_identity['last_name']}.pdf"))
         driver.implicitly_wait(5)
         
