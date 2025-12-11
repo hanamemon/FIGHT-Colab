@@ -38,70 +38,88 @@ def get_random_url(driver):
     return random.choice(urls)
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    while True:
-        try:
+#     while True:
+#         driver = None
+#         try:
             
 
-            print("Starting a new iteration...")
+#             print("Starting a new iteration...")
         
-            # driver = start_driver_local()
-            driver = start_driver()
+#             # driver = start_driver_local()
+#             driver = start_driver()
             
-            print("Driver started successfully.")
-            print("generating fake identity...")
-            fake_identity = generate_fake_identity(fake)
+#             print("Driver started successfully.")
+#             print("generating fake identity...")
+#             fake_identity = generate_fake_identity(fake)
             
-            name = f"{fake_identity['first_name']} {fake_identity['last_name']}"
-            # Generate a resume with default settings
-            print("Generating resume...")
-            resume = make_resume(name, fake_identity['email'], f"{name}.pdf")
+#             name = f"{fake_identity['first_name']} {fake_identity['last_name']}"
+#             # Generate a resume with default settings
+#             print("Generating resume...")
+#             resume = make_resume(name, fake_identity['email'], f"{name}.pdf")
 
-            print("Resume generated successfully.")
-            # Select random form of the 2
+#             print("Resume generated successfully.")
+#             # Select random form of the 2
 
-            # match get_random_url(driver):
-            #     case 0:
-            #         print("Filling out form for Application 1...")
-            #         fill_form_app1(driver, fake_identity)
-            #     case 1:
-            #         print("Filling out form for Application 2...")
-            #         fill_form_app2(driver, fake_identity)
-            #     case 2:
-            #         print("Filling out form for Application 3...")
-            #         fill_form_all(driver, fake_identity, urls[2])
-            #     case _:
-            #         print("No valid application found, retrying...")
-            #         continue
+#             # match get_random_url(driver):
+#             #     case 0:
+#             #         print("Filling out form for Application 1...")
+#             #         fill_form_app1(driver, fake_identity)
+#             #     case 1:
+#             #         print("Filling out form for Application 2...")
+#             #         fill_form_app2(driver, fake_identity)
+#             #     case 2:
+#             #         print("Filling out form for Application 3...")
+#             #         fill_form_all(driver, fake_identity, urls[2])
+#             #     case _:
+#             #         print("No valid application found, retrying...")
+#             #         continue
                         
                     
-            print("Filling out the form...")
+#             print("Filling out the form...")
             
-            url = get_random_url(driver)
-            fill_form_all(driver, fake_identity, urls[url], url)
+#             url = get_random_url(driver)
+#             fill_form_all(driver, fake_identity, urls[url], url)
 
 
             
-            # print("Filling out the form...")
-            # fill_form(driver, fake_identity)
+#             # print("Filling out the form...")
+#             # fill_form(driver, fake_identity)
             
-            print("Form filled successfully.")
-            # Wait for a few seconds before the next iteration
-            print("Waiting for 2 seconds before the next iteration...")
-            time.sleep(2)
-            
+#             print("Form filled successfully.")
+#             # Wait for a few seconds before the next iteration
+#             print("Waiting for 2 seconds before the next iteration...")
+#             time.sleep(2)
+if __name__ == "__main__":
+    driver = None
+    try:
+        print("Starting a single iteration...")
+        driver = start_driver()
+        print("Driver started successfully.")
+        
+        print("Done with single iteration.")
 
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            # Optionally, you can add a delay before retrying
-            time.sleep(5)
-        finally:
-            # Close the driver after each iteration
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    finally:
+        if driver is not None:
             try:
                 driver.quit()
             except Exception as e:
                 print(f"Error closing driver: {e}")
+
+        # except Exception as e:
+        #     print(f"An error occurred: {e}")
+        #     # Optionally, you can add a delay before retrying
+        #     time.sleep(5)
+        # finally:
+        #     # Close the driver after each iteration
+        #     try:
+        #         driver.quit()
+        #     except Exception as e:
+        #         print(f"Error closing driver: {e}")
             
             
         
