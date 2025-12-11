@@ -184,9 +184,9 @@ def page_1(driver: webdriver.Chrome, fake_identity: dict, url:str) -> None:
         }
         """)
         
-        
-        checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
-        checkbox.click()
+        # i dont think they have this anymore
+        # checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
+        # checkbox.click()
         time.sleep(1)
         
         
