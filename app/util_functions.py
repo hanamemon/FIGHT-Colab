@@ -30,7 +30,7 @@ def start_driver() -> webdriver.Chrome:
     )
     options.binary_location = "/usr/bin/chromium-browser" ## testing if this works
 
-    service = Service(ChromeDriverManager().install())
+    service = Service("/usr/lib/chromium-browser/chromedriver")
     driver = webdriver.Chrome(service=service, options=options)
     # s = Service("/bin/chromedriver")
     # options = webdriver.ChromeOptions()
