@@ -28,11 +28,11 @@ def start_driver() -> webdriver.Chrome:
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/95.0.4638.54 Safari/537.36"
     )
-    options.binary_location = "/usr/bin/chromium-browser" ## testing if this works
+    #options.binary_location = "/usr/bin/chromium-browser" ## testing if this works
 
     # service = Service("/usr/lib/chromium-browser/chromedriver")
-    service = Service("/usr/bin/chromedriver")
-    driver = webdriver.Chrome(service=service, options=options)
+   # service = Service("/usr/bin/chromedriver")
+    driver = webdriver.Chrome(options=options)
     # s = Service("/bin/chromedriver")
     # options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
