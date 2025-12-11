@@ -19,7 +19,7 @@ import logging
 def start_driver() -> webdriver.Chrome:
 
     options = Options()
-    options.add_argument("--headless=new")
+    options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("start-maximized")
@@ -29,7 +29,7 @@ def start_driver() -> webdriver.Chrome:
         "Chrome/95.0.4638.54 Safari/537.36"
     )
     options.binary_location = "/usr/bin/chromium-browser" ## testing if this works
-    
+
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     # s = Service("/bin/chromedriver")
