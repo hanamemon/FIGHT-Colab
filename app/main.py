@@ -12,7 +12,7 @@ fake = Faker()
 
 
 
-urls = ["https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3173329","https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3223576", "https://recruiting.paylocity.com/Recruiting/Jobs/Apply/2978847", "https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3292538"]
+urls = ["https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3173329","https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3223576", "https://recruiting.paylocity.com/Recruiting/Jobs/Apply/2978847", "https://recruiting.paylocity.com/Recruiting/Jobs/Apply/3292538", "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3739825"]
 
 
 
