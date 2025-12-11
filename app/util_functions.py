@@ -422,14 +422,21 @@ def fill_form_app1(driver: webdriver.Chrome, fake_identity: dict) -> None:
         
         
         print("hiding the modal")
-        # style of .backdrop none
-        driver.execute_script("document.querySelector('.backdrop').style.display = 'none'")
-        # style of .modal-dialog none
-        driver.execute_script("document.querySelector('.modal').style.display = 'none'")
+        driver.execute_script("""
+        const backdrop = document.querySelector('.backdrop');
+        if (backdrop) {
+        backdrop.style.display = 'none';
+        }
+        const modal = document.querySelector('.modal');
+        
+        if (modal) {
+        modal.style.display = 'none';
+        }
+        """)
         
         
-        checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
-        checkbox.click()
+        # checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
+        # checkbox.click()
         time.sleep(1)
         
         
@@ -614,11 +621,17 @@ def fill_form_app2(driver: webdriver.Chrome, fake_identity: dict) -> None:
         
         
         print("hiding the modal")
-        # style of .backdrop none
-        driver.execute_script("document.querySelector('.backdrop').style.display = 'none'")
-        # style of .modal-dialog none
-        driver.execute_script("document.querySelector('.modal').style.display = 'none'")
+        driver.execute_script("""
+        const backdrop = document.querySelector('.backdrop');
+        if (backdrop) {
+        backdrop.style.display = 'none';
+        }
+        const modal = document.querySelector('.modal');
         
+        if (modal) {
+        modal.style.display = 'none';
+        }
+        """)
         
         # checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
         # checkbox.click()
