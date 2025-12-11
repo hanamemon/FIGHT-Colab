@@ -41,6 +41,7 @@ def get_random_url(driver):
 if __name__ == "__main__":
     
     while True:
+        driver = None
         try:
             
 
