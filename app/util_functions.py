@@ -622,7 +622,7 @@ def fill_form_app2(driver: webdriver.Chrome, fake_identity: dict) -> None:
         
         # checkbox = driver.find_element("id", "useAttachedResumeToFillOutApplication")
         # checkbox.click()
-        # time.sleep(1)
+        time.sleep(1)
         
         
         print("attaching the resume")
